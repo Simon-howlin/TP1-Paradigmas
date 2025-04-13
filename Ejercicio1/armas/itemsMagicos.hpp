@@ -10,11 +10,11 @@ using namespace std;
 
 // class Armas {
 // public:
-//     virtual void getNombre() = 0; ->
+//     virtual string getNombre() = 0; ->
 //     virtual void mostrarInfo() = 0; ->
 //     virtual void usar() = 0;
-//     virtual void durabilidadRestante() = 0; ->
-//     virtual void getRareza() = 0; ->
+//     virtual int durabilidadRestante() = 0; ->
+//     virtual string getRareza() = 0; ->
 //     virtual ~Armas() = default;
 // };
 
@@ -71,13 +71,13 @@ public:
 
 class Amuleto: public ItemsMagicos {
 private:
-    int ambiguedad;
+    int antiguedad;
 
 public:
     Amuleto();
     void usar() override;
     void especialidad() override;
-    int getAmbiguedad();
+    int getAntiguedad();
 };
 
 #endif

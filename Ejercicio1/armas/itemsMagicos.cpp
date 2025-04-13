@@ -112,9 +112,29 @@ Amuleto::Amuleto(): ItemsMagicos("amuleto", 10, "legendario", 100, "Magico") {
     static random_device rd;
     static mt19937 gen(rd()); // motor Mersenne Twister
     static uniform_int_distribution<> dist(0, 250); // rango [0, 250]
-    ambiguedad = dist(gen);
+    antiguedad = dist(gen);
 
-    if (ambiguedad > 200) {
+    if (antiguedad > 200) {
         rareza = "Mitico";
     }
+}
+
+void Amuleto::usar() {
+    cout << "[GOLPE BASICO]: descarga magica\n";
+    return;
+}
+
+void Amuleto::especialidad() {
+    cout << "[ESPECIALIDAD]: tormenta de almas magicas\n";
+    return;
+}
+
+int Amuleto::getAntiguedad() {
+    if (rareza == "mitico") {
+        cout <<"[AVISO]: tu amuleto tinene " << antiguedad << " siglos de antiguedad. Eso lo convierte en Mitico!" << endl;
+    } else {
+        cout <<"[AVISO]: tu amuleto tinene " << antiguedad << " siglos de antiguedad. Sigue siendo de rareza Legendaria" << endl;
+    }
+
+    return antiguedad;
 }
