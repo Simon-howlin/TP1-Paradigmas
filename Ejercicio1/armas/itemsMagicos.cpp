@@ -37,10 +37,10 @@ void Baston::especialidad() {
 bool Baston::getEmbrujado() {
     if (estaEmbrujado) {
         cout << "[AVISO]: Ten cuidado! Pelea con ingenio. Tu baston esta embrujado, eso podria afectarte.\n";
-        return estaEmbrujado;
+        return true;
     } else {
         cout << "[AVISO]: Tuviste suerte! Tu baston no esta embrujado, usalo a tu favor.\n";
-        return estaEmbrujado;
+        return false;
     }
 }
 
@@ -61,17 +61,17 @@ void LibroDeHechizos::usar() {
 }
 
 void LibroDeHechizos::especialidad() {
-    cout << "[ESPECIALIDAD]: Expecto Patronum";
+    cout << "[ESPECIALIDAD]: Expecto Patronum\n";
     return;
 }
 
 bool LibroDeHechizos::getEncantamiento() {
     if (estaEncantado) {
         cout << "[AVISO]: Tu libro esta encantado, es una maravilla! Solo escucha con atencion y el libro te dira tus proximos moviminetos.\n";
-        return estaEncantado;
+        return true;
     } else {
         cout << "[AVISO]: Tu libro no a sido tocado por la barita :( . No te desanimes, el libro contiene informacion que te sera muy util.\n";
-        return estaEncantado;
+        return false;
     }
 }
 
@@ -91,17 +91,17 @@ void Pocion::usar() {
 }
 
 void Pocion::especialidad() {
-    cout << "[ESPECIALIDAD]: Paralizar rival";
+    cout << "[ESPECIALIDAD]: Paralizar rival\n";
     return;
 }
 
 bool Pocion::getEncantamiento() {
     if (estaEnvenenado) {
         cout << "[AVISO]: Ten cuidado! La pocion esta envenenada. Toma tus proximas deciciones  detenidamente para evitar un paso en falso.\n";
-        return estaEnvenenado;
+        return true;
     } else {
         cout << "[AVISO]: Tuviste suerte! La pocion no esta envenenada, usalo a tu favor.\n";
-        return estaEnvenenado;
+        return false;
     }
 }
 

@@ -12,10 +12,12 @@ class Personajes {
 public:
     virtual string getNombre() = 0;
     virtual void mostrarInfo() = 0;
-    virtual int getAgilidad() = 0;
+    virtual float getAgilidad() = 0;
+    virtual void recibirDaño() = 0;
+    virtual int getVida() = 0;
     virtual void gritoDeGuerra() = 0;
-    virtual void agregarArma(shared_ptr<Armas>) = 0;
-    virtual pair<shared_ptr<Armas>, shared_ptr<Armas>> getArmas() = 0;
+    virtual void agregarArma(unique_ptr<Armas>) = 0;
+    virtual pair<unique_ptr<Armas>, unique_ptr<Armas>>& getArmas() = 0;
     virtual ~Personajes() = default;
 };
 

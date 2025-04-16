@@ -1,22 +1,10 @@
 #ifndef ITEMSMAGICOS_HPP
 #define ITEMSMAGICOS_HPP
 
-#include <string>
-#include <iostream>
 #include <random>
 #include "armas.hpp"
 
 using namespace std;
-
-// class Armas {
-// public:
-//     virtual string getNombre() = 0; ->
-//     virtual void mostrarInfo() = 0; ->
-//     virtual void usar() = 0;
-//     virtual int durabilidadRestante() = 0; ->
-//     virtual string getRareza() = 0; ->
-//     virtual ~Armas() = default;
-// };
 
 class ItemsMagicos: public Armas {
 protected:
@@ -32,6 +20,7 @@ public:
     void mostrarInfo() override;  // nombre | daño | durabilidad inicial | 
     int durabilidadRestante() override;
     string getRareza() override;
+    virtual ~ItemsMagicos() = default;
 
     virtual void especialidad() = 0;
 };

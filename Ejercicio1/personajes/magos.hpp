@@ -1,18 +1,8 @@
 #ifndef MAGOS_HPP
 #define MAGOS_HPP
 
+#include <random>
 #include "personajes.hpp"
-
-// class Personajes {
-// public:
-//     virtual string getNombre() = 0;
-//     virtual void mostrarInfo() = 0;
-//     virtual void getAgilidad() = 0;
-//     virtual void gritoDeGuerra() = 0; --> este
-//     virtual void agregarArma(shared_ptr<Armas>) = 0;
-//     virtual pair<shared_ptr<Armas>, shared_ptr<Armas>> getArmas() = 0;
-//     virtual ~Personajes() = default;
-// };
 
 class Magos: public Personajes {
 protected:
@@ -20,16 +10,19 @@ protected:
     int vida;
     int fuerza;
     string tipoPersonaje;
-    pair<shared_ptr<Armas>, shared_ptr<Armas>> armas;
-    int agilidad;
+    float agilidad;
+    pair<unique_ptr<Armas>, unique_ptr<Armas>> armas;
 
 public:
-    Magos(string nombre, int vida, int fuerza, string tipoDePersonaje, int agilidad);
+    Magos(string nombre, int vida, int fuerza, string tipoPersonaje, float agilidad);
     string getNombre() override;
     void mostrarInfo() override;
-    int getAgilidad() override;
-    void agregarArma(shared_ptr<Armas>) override;
-    pair<shared_ptr<Armas>, shared_ptr<Armas>> getArmas() override;
+    float getAgilidad() override;
+    void recibirDaño() override;
+    int getVida() override;
+    void agregarArma(unique_ptr<Armas> arma) override;
+    pair<unique_ptr<Armas>, unique_ptr<Armas>>& getArmas() override;
+    virtual ~Magos() = default;
 
     virtual int getXP() = 0;
 };
@@ -61,7 +54,7 @@ public:
 class Brujo: public Magos {
 private:
     int xp;
-    bool EsAprendiz;
+    bool esAprendiz;
 
 public:
     Brujo();

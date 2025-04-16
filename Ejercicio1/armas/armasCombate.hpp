@@ -1,20 +1,8 @@
-#ifndef ITEMSMAGICOS_HPP
-#define ITEMSMAGICOS_HPP
+#ifndef ARMASCOMBATE_HPP
+#define ARMASCOMBATE_HPP
 
-#include <string>
-#include <iostream>
 #include <random>
 #include "armas.hpp"
-
-// class Armas {
-// public:
-//     virtual void getNombre() = 0; ->
-//     virtual void mostrarInfo() = 0; ->
-//     virtual void usar() = 0;
-//     virtual void durabilidadRestante() = 0; ->
-//     virtual void getRareza() = 0; ->
-//     virtual ~Armas() = default;
-// };
 
 class ArmasDeCombate: public Armas {
 protected:
@@ -30,11 +18,12 @@ public:
     void mostrarInfo() override;  // nombre | daño | durabilidad inicial | tipo de Elemento
     int durabilidadRestante() override;
     string getRareza() override;
+    virtual ~ArmasDeCombate() = default;
 
     virtual void especialidad() = 0;
 };
 
-class HachaSimple: public ArmasDeCombate {
+class HachaSimple: public ArmasDeCombate { //--> raro
 private:
     bool fueHeredada;
 
@@ -45,7 +34,7 @@ public:
     bool getFueHeredada();
 };
 
-class  HachaDoble: public ArmasDeCombate {
+class  HachaDoble: public ArmasDeCombate { // --> mitico
 private:
     bool fueHeredada;
 
@@ -56,10 +45,9 @@ public:
     bool getFueHeredada();
 };
 
-class Espada: public ArmasDeCombate {
+class Espada: public ArmasDeCombate { // --> legendario
 private:
     bool estaAfilado;
-    int filo;
 
 public:
     Espada();
@@ -68,7 +56,7 @@ public:
     bool getEstaAfilado();
 };
 
-class Lanza: public ArmasDeCombate {
+class Lanza: public ArmasDeCombate {  // --> epico
 private:
     bool tieneAgarre;
 
@@ -79,7 +67,7 @@ public:
     bool getAgarre();
 };
 
-class Garrote: public ArmasDeCombate {
+class Garrote: public ArmasDeCombate { // --> comun
 private:
     bool esPesado;
 
