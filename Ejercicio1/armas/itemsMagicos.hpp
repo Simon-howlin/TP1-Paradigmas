@@ -55,7 +55,7 @@ public:
     Pocion();
     void usar() override;
     void especialidad() override;
-    bool getEncantamiento();
+    bool getEnvenenado();
 };
 
 class Amuleto: public ItemsMagicos {

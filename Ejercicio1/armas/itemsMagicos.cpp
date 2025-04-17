@@ -95,7 +95,7 @@ void Pocion::especialidad() {
     return;
 }
 
-bool Pocion::getEncantamiento() {
+bool Pocion::getEnvenenado() {
     if (estaEnvenenado) {
         cout << "[AVISO]: Ten cuidado! La pocion esta envenenada. Toma tus proximas deciciones  detenidamente para evitar un paso en falso.\n";
         return true;
