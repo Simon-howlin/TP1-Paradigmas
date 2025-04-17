@@ -70,7 +70,7 @@ int main() {
         cout << "[WINER]: " << personajeCreado1->getNombre() << endl;
     } else {
         cout << "" << endl;
-        cout << "El ganador es el jugador 2! Perdste :(" << endl;
+        cout << "El ganador es el jugador 2! Perdiste :(" << endl;
         cout << "[WINER]: " << personajeCreado2->getNombre() << endl;
     }
 

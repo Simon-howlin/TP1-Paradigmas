@@ -20,6 +20,7 @@ int main() {
     cout << "Metodos especiales del arma..." <<endl;
     libroDeHechizos->especialidad();
     libroDeHechizos->getEncantamiento();
+    cout << "" << endl;
     cout << "Asignando el arma al personaje..." << endl;
     hechicero->agregarArma(std::move(libroDeHechizos));
     cout << "Arma asignada." << endl;
@@ -27,6 +28,7 @@ int main() {
     cout << "Arma: " << armas1.first->getNombre() << endl;
     armas1.first->mostrarInfo();
     armas1.first->getRareza();
+    cout << "" << endl;
     cout << "Usando arma..." << endl;
     armas1.first->usar();
     cout << "" << endl;
@@ -49,6 +51,7 @@ int main() {
     cout << "Metodos especiales del arma..." <<endl;
     hachadoble->especialidad();
     hachadoble->getFueHeredada();
+    cout << "" << endl;
     cout << "Asignando el arma al personaje..." << endl;
     gladiador->agregarArma(std::move(hachadoble));
     cout << "Arma asignada." << endl;
@@ -56,6 +59,7 @@ int main() {
     cout << "Arma: " << armas2.first->getNombre() << endl;
     armas2.first->mostrarInfo();
     armas2.first->getRareza();
+    cout << "" << endl;
     cout << "Usando arma..." << endl;
     armas2.first->usar();
     cout << "" << endl;
